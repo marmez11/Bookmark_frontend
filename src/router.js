@@ -13,7 +13,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<App/>}>
             <Route path="" element={<Index/>} loader={bookmarksLoader} />
             <Route path="create" action={createBookmark} />
-            <Route path="update/:id" action={updateBookmark}/>
+            <Route path="update/:id" action={updateBookmark} />
             <Route path="delete/:id" action={deleteBookmark} />
         </Route>
     )
