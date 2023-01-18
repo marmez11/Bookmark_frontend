@@ -1,4 +1,4 @@
-import { Form, Link, useLoaderData } from "react-router-dom"
+import { Form, useLoaderData } from "react-router-dom"
 
 function Index(props) {
   const book = useLoaderData()
