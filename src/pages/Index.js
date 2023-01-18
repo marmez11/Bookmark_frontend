@@ -1,7 +1,7 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
 
 function Index(props) {
-    const book = useLoaderData()
+  const book = useLoaderData()
 
   return (
     <div>
@@ -14,11 +14,11 @@ function Index(props) {
 
       <h2>Book List</h2>
       {book.map(book => (
-    <div key={book._id} className="book">
-      <Link to={`/${book._id}`}>
-        <h1>{book.title}</h1>
-      </Link>
-    </div>
+        <div key={book._id} className="book">
+          <Link to={`/${book._id}`}>
+            <h1>{book.title}</h1>
+          </Link>
+        </div>
       ))}
     </div>
   )
