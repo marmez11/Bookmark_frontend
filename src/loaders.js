@@ -1,4 +1,4 @@
-const URL = "https://bookmark-backend-ae9o.onrender.com/"
+const URL = "https://bookmark-backend-ae9o.onrender.com"
 
 export const bookmarksLoader = async () => {
     const response = await fetch(URL + "/book")
