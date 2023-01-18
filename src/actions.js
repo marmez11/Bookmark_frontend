@@ -11,7 +11,7 @@ export const createBookmark = async ({request}) => {
         url: formData.get("url")
     }
 
-    await fetch(URL + "/books", {
+    await fetch(URL + "/book", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const updateBookmark = async ({request, params}) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(updateBookmark)
+        body: JSON.stringify(updatedBookmark)
     })
     return redirect('/')
 }

@@ -5,14 +5,14 @@ function Index(props) {
 
   return (
     <div>
-      <h2>Add a Book</h2>
+      <h2>Add a Bookmark</h2>
       <Form action="/create" method="post">
         <input type="input" name="title" placeholder="Book's name" />
         <input type="input" name="url" placeholder="Book's Link" />
         <input type="submit" value="Add Book" />
       </Form>
 
-      <h2>Book List</h2>
+      <h2>Bookmark List</h2>
       {book.map(book => (
         <div key={book._id} className="book">
           <a href={`https://${book.url}`}>
