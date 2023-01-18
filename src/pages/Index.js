@@ -15,9 +15,9 @@ function Index(props) {
       <h2>Book List</h2>
       {book.map(book => (
         <div key={book._id} className="book">
-          <Link to={`/${book._id}`}>
+          <a href={`https://${book.url}`}>
             <h1>{book.title}</h1>
-          </Link>
+          </a>
         </div>
       ))}
     </div>
