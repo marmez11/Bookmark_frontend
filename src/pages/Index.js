@@ -20,6 +20,9 @@ function Index(props) {
           </a>
           <Link to={`/${book._id}`}>Update
           </Link>
+          <Form action={`/delete/${book._id}`} method="post">
+        <input type="submit" value={`delete ${book.title}`} />
+      </Form>
         </div>
       ))}
     </div>
