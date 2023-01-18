@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom";
 
-const URL = "https://bookmark-backend-ae9o.onrender.com/"
+const URL = "https://bookmark-backend-ae9o.onrender.com"
 
 export const createBookmark = async ({request}) => {
     const formData = await request.formData()
