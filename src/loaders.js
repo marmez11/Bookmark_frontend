@@ -5,3 +5,9 @@ export const bookmarksLoader = async () => {
     const bookmarks = await response.json()
     return bookmarks
 }
+
+export const updateBookLoader = async ({params}) => {
+    const response = await fetch(URL + "/book/" + params.id )
+    const book = await response.json()
+    return book
+  }

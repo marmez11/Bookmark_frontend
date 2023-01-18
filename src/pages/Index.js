@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router-dom"
+import { Form, Link, useLoaderData } from "react-router-dom"
 
 function Index(props) {
   const book = useLoaderData()
@@ -18,6 +18,8 @@ function Index(props) {
           <a href={`https://${book.url}`}>
             <h1>{book.title}</h1>
           </a>
+          <Link to={`/${book._id}`}>Update
+          </Link>
         </div>
       ))}
     </div>
