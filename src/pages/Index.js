@@ -4,7 +4,7 @@ function Index(props) {
   const book = useLoaderData()
 
   return (
-    <div>
+    <div className="center-screen">
       <h2>Add a Bookmark</h2>
       <Form action="/create" method="post" className="addBook">
         <input type="input" name="title" placeholder="Site Name" />
@@ -21,8 +21,8 @@ function Index(props) {
           <Link to={`/${book._id}`}>Update {book.title} URL
           </Link>
           <Form action={`/delete/${book._id}`} method="post">
-        <input type="submit" value={`Delete ${book.title}`} />
-      </Form>
+            <input type="submit" value={`Delete ${book.title}`} />
+          </Form>
         </div>
       ))}
     </div>
