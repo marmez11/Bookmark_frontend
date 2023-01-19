@@ -1,5 +1,5 @@
 .nav {
-    color: blue;
+    color: white;
     background-color: gray;
     text-align: left;
 }
@@ -12,13 +12,13 @@
     display: flex;
     justify-content: center;
     padding: 5px;
-    border: solid black;
 }
 
 h2 {
     text-emphasis: bold;
-    color: blue;
-    text-align: center; 
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px #000000;
 }
 
 .book {
@@ -27,4 +27,8 @@ h2 {
     align-items: center;
     background-color: paleturquoise;
     border: black solid;
+}
+
+body {
+    background-image: url(https://www.miltonandking.com/wp-content/uploads/2018/10/Wallpaper-Kemra-Bookshelf-1.jpg);
 }
