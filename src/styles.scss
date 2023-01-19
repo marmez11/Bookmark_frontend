@@ -1,0 +1,30 @@
+.nav {
+    color: blue;
+    background-color: gray;
+    text-align: left;
+}
+
+.nav div {
+    padding: 10px;
+}
+
+.addBook {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border: solid black;
+}
+
+h2 {
+    text-emphasis: bold;
+    color: blue;
+    text-align: center; 
+}
+
+.book {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: paleturquoise;
+    border: black solid;
+}
