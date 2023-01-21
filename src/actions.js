@@ -46,3 +46,22 @@ export const deleteBookmark = async ({params}) => {
 
     return redirect("/")
 }
+
+
+export const showBookmark = async ({request, params}) => {
+    const formData = await request.formData()
+
+    const showBookmark = {
+        title: formData.get("title"),
+        url: formData.get("url")
+    }
+
+    await fetch(URL + "/book/" + params.id, {
+        method: "get",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(showBookmark)
+    })
+    return redirect('/')
+}

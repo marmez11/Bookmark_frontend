@@ -4,7 +4,7 @@ function Index(props) {
   const book = useLoaderData()
 
   return (
-    <div>
+    <div className="addBook_body">
       <h2>Add a Bookmark</h2>
       <Form action="/create" method="post" className="addBook">
         <input type="input" name="title" placeholder="Site Name" />
@@ -15,14 +15,14 @@ function Index(props) {
       <h2>My Bookmarks</h2>
       {book.map(book => (
         <div key={book._id} className="book">
-          <a href={`https://${book.url}`}>
-            <h1>{book.title}</h1>
-          </a>
+          
+          <p id="bookmark_update"><a href={`/show/${book._id}`}><b><em>{`"${book.title}" Bookmark`}</em></b></a></p>
+
           <Link to={`/${book._id}`}>Update {book.title} URL
           </Link>
-          <Form action={`/delete/${book._id}`} method="post">
-        <input type="submit" value={`Delete ${book.title}`} />
-      </Form>
+
+          <Link to={`/delete/${book._id}`}>Delete {book.title}
+          </Link>
         </div>
       ))}
     </div>

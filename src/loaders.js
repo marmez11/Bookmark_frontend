@@ -11,3 +11,15 @@ export const updateBookLoader = async ({params}) => {
     const book = await response.json()
     return book
   }
+
+export const showBookLoader = async ({params}) => {
+    const response = await fetch(URL + "/book/" + params.id )
+    const book = await response.json()
+    return book
+  }
+
+export const deleteBookLoader = async ({params}) => {
+    const response = await fetch(URL + "/book/" + params.id )
+    const book = await response.json()
+    return book
+  }
