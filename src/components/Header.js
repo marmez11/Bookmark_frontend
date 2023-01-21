@@ -14,9 +14,6 @@ return (
       <Link to={`${book._id}`}>
         <div>{`${book.title}`} Bookmark Update by ID (Update Page)</div>
       </Link>
-      <Link to={`/delete/${book._id}`}>
-        <div>{`${book.title}`} Bookmark Delete (Delete Page)</div>
-      </Link>
       </div>
     ))}
   </div>

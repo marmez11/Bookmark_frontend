@@ -8,7 +8,6 @@ import { bookmarksLoader, updateBookLoader, showBookLoader, deleteBookLoader } f
 import { createBookmark, updateBookmark, deleteBookmark } from './actions'
 import Index from './pages/Index'
 import Update from './pages/Update'
-import Delete from './pages/Delete'
 import Show from "./pages/Show"
 
 const router = createBrowserRouter(
@@ -17,7 +16,6 @@ const router = createBrowserRouter(
             <Route path="" element={<Index/>} loader={bookmarksLoader} />
             <Route path=":id" element={<Update />} loader={updateBookLoader} />
             <Route path="show/:id" element={<Show />} loader={showBookLoader} />
-            <Route path="delete/:id" element={<Delete />} loader={deleteBookmark} />
             <Route path="create" action={createBookmark} />
             <Route path="update/:id" action={updateBookmark} />
             <Route path="delete/:id" action={deleteBookmark} />
