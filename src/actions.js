@@ -56,7 +56,7 @@ export const showBookmark = async ({request, params}) => {
         url: formData.get("url")
     }
 
-    await fetch(URL + "/book/" + params.id, {
+    await fetch(URL + "/book/show/" + params.id, {
         method: "get",
         headers: {
             "Content-Type": "application/json"
