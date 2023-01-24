@@ -1,21 +1,17 @@
 import { useLoaderData, Link } from "react-router-dom"
 
 function Header(props) {
-  const book = useLoaderData()
+  const recipe = useLoaderData()
 
 return (
-  <div className="addBook_body2">
-    <h2>My Bookmarks</h2>
+  <div className="recipe_body">
     <Link to="/">
-        <div>Bookmark App (Home Page)</div>
+        <div>Home</div>
       </Link>
-    {book.map(book => (
-      <div key={book._id} className="nav_book">
-      <Link to={`${book._id}`}>
-        <div>{`${book.title}`} Bookmark Update by ID (Update Page)</div>
+      <Link to={`/Recipe/create`}>
+        <div>Create</div>
       </Link>
-      </div>
-    ))}
+      <h2>Team 10's Cookbook</h2>
   </div>
 )
 }

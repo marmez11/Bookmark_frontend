@@ -4,7 +4,7 @@ import {
     Route
 } from 'react-router-dom'
 import App from './App'
-import { bookmarksLoader, updateBookLoader, showBookLoader, deleteBookLoader } from './loaders'
+import { bookmarksLoader, updateBookLoader, showBookLoader } from './loaders'
 import { createBookmark, updateBookmark, deleteBookmark } from './actions'
 import Index from './pages/Index'
 import Update from './pages/Update'

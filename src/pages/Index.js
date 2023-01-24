@@ -1,29 +1,14 @@
 import { Form, Link, useLoaderData } from "react-router-dom"
 
 function Index(props) {
-  const book = useLoaderData()
+  const recipe = useLoaderData()
 
   return (
-    <div className="addBook_body">
-      <h2>Add a Bookmark</h2>
-      <Form action="/create" method="post" className="addBook">
-        <input type="input" name="title" placeholder="Site Name" />
-        <input type="input" name="url" placeholder="URL" />
-        <input type="submit" value="Add Book" />
-      </Form>
-
-      <h2>My Bookmarks</h2>
-      {book.map(book => (
-        <div key={book._id} className="book">
-          
-          <p id="bookmark_update"><a href={`/show/${book._id}`}><b><em>{`"${book.title}" Bookmark`}</em></b></a></p>
-
-          <Link to={`/${book._id}`}>Update {book.title} URL
-          </Link>
-
-          <Form action={`/delete/${book._id}`} method="delete">
-          <input type="submit" value={`Delete Bookmark ${book.title}`} />
-        </Form>
+    <div className="recipe_index_body">
+      {recipe.map(recipes => (
+        <div key={recipes._id} className="recipe_box">
+          <h3>{recipes.name}</h3>
+          <p id="recipe_index"><img href={`${recipes.image}`} alt="" /></p>
         </div>
       ))}
     </div>

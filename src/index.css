@@ -13,32 +13,5 @@ code {
 }
 
 h2{
-  background-color: aqua;
-}
-
-.book_delete_title{
-  border: 5px solid #095484;
-}
-
-.book_delete{
-  background-color: aquamarine;
-  border: 5px solid #095484;
-}
-
-.book_title{
-  background-color: aquamarine;
-  border: 5px solid #095484;
-}
-
-.addBook_body{
-  background-color: aquamarine
-}
-
-.book_show_display{
-  border: 5px solid #095484;
-  background-color: aquamarine;
-}
-
-.book_title_show{
-  border-bottom: 5px solid #095484;
+  background-color: red;
 }
