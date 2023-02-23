@@ -1,25 +1,16 @@
-const URL = "https://bookmark-backend-ae9o.onrender.com"
+// YOUR DEPLOYED API BASE URL
+const URL = "https://project-4-backend-weapons.onrender.com"
 
-export const bookmarksLoader = async () => {
-    const response = await fetch(URL + "/book")
-    const bookmarks = await response.json()
-    return bookmarks
+//indexLoader => get all todos for index route
+export const indexLoader = async () => {
+    const response = await fetch(URL + "/weapons")
+    const todos = await response.json()
+    return todos
 }
 
-export const updateBookLoader = async ({params}) => {
-    const response = await fetch(URL + "/book/" + params.id )
-    const book = await response.json()
-    return book
-  }
-
-export const showBookLoader = async ({params}) => {
-    const response = await fetch(URL + "/book/" + params.id )
-    const book = await response.json()
-    return book
-  }
-
-export const deleteBookLoader = async ({params}) => {
-    const response = await fetch(URL + "/book/" + params.id )
-    const book = await response.json()
-    return book
-  }
+//showLoader => get a single todo for Show route
+export const showLoader = async ({params}) => {
+    const response = await fetch(URL + `/weapons/${params.id}/`)
+    const todo = await response.json()
+    return todo
+}

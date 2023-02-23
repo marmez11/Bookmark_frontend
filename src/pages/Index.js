@@ -1,18 +1,21 @@
-import { Form, Link, useLoaderData } from "react-router-dom"
+import Post from "../components/Post";
+import {useLoaderData} from "react-router-dom"
+import { Form } from "react-router-dom";
 
-function Index(props) {
-  const recipe = useLoaderData()
+const Index = (props) => {
+  const weapons = useLoaderData()
+  // For each post in the array render a Post component
+  return <>
+  <div style={{textAlign: "center"}}>
+  <h2>Create a weapons</h2>
+  <Form action="/create" method="post">
+      <input type="text" name="subject" placeholder="write subject here"/>
+      <input type="text" name="details" placeholder="write details here"/>
+      <button>Create New weapons</button>
+  </Form>
+  </div>
+  {weapons.map((post) => <Post post={post} key={post.id} />)}
+  </>;
+};
 
-  return (
-    <div className="recipe_index_body">
-      {recipe.map(recipes => (
-        <div key={recipes._id} className="recipe_box">
-          <h3>{recipes.name}</h3>
-          <p id="recipe_index"><img href={`${recipes.image}`} alt="" /></p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-export default Index
+export default Index;

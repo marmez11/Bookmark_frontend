@@ -1,67 +1,69 @@
-import { redirect } from "react-router-dom";
+import { redirect } from "react-router-dom"
 
-const URL = "https://bookmark-backend-ae9o.onrender.com"
+// YOUR DEPLOYED API BASE URL
+const URL = "https://project-4-backend-weapons.onrender.com"
 
-export const createBookmark = async ({request}) => {
+//createAction => create a todo from form submissions to `/create`
+export const createAction = async ({request}) => {
+    // get form data
     const formData = await request.formData()
 
-    const newBookmark = {
-        title: formData.get("title"),
-
-        url: formData.get("url")
+    // construct request body
+    const newWeapon = {
+        subject: formData.get("subject"),
+        details: formData.get("details")
     }
 
-    await fetch(URL + "/book", {
+    // send request to backend
+    await fetch(URL + "/weapons", {
         method: "post",
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify(newBookmark)
+        body: JSON.stringify(newWeapon)
     })
+
+    // redirect back to index page
     return redirect("/")
 }
 
-export const updateBookmark = async ({request, params}) => {
+//updateAction => update a todo from form submissions to `/update/:id`
+export const updateAction = async ({request, params}) => {
+    // get form data
     const formData = await request.formData()
 
-    const updatedBookmark = {
-        title: formData.get("title"),
-        url: formData.get("url")
+    // get todo id
+    const id = params.id
+
+    // construct request body
+    const updatedWeapons = {
+        subject: formData.get("subject"),
+        details: formData.get("details")
     }
 
-    await fetch(URL + "/book/" + params.id, {
+    // send request to backend
+    await fetch(URL + `/weapons/${id}/`, {
         method: "put",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(updatedBookmark)
+        body: JSON.stringify(updatedWeapons)
     })
-    return redirect('/')
+
+    // redirect back to show page page
+    return redirect(`/post/${id}`)
 }
 
-export const deleteBookmark = async ({params}) => {
-    await fetch (URL + "/book/" + params.id, {
-        method: "delete"
+//deleteAction => delete a todo from form submissions to `/delete/:id`
+export const deleteAction = async ({params}) => {
+    // get todo id
+    const id = params.id
+
+    // send request to backend
+    await fetch(URL + `/weapons/${id}/`, {
+        method: "delete",
     })
 
+    // redirect back to show page page
     return redirect("/")
-}
-
-
-export const showBookmark = async ({request, params}) => {
-    const formData = await request.formData()
-
-    const showBookmark = {
-        title: formData.get("title"),
-        url: formData.get("url")
-    }
-
-    await fetch(URL + "/book/show/" + params.id, {
-        method: "get",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(showBookmark)
-    })
-    return redirect('/')
 }

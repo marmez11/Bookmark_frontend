@@ -1,23 +1,49 @@
-import { useLoaderData, Form } from "react-router-dom"
+import { Link, useLoaderData, Form } from "react-router-dom";
 
-function Show(props) {
-    const recipe = useLoaderData()
+// destructuring the props needed to get our post, including router prop match
+const Show = () => {
+  const post = useLoaderData();
 
-    return (
-      <div className="recipe_show_body">
-      <p><img href={`${recipe.image}`} alt="" /> &emsp; <h1>{recipe.name}</h1></p> 
-      <br></br>
-      <input className="Recipe_info_txtbox1" type="text" />
-      <br></br>
-      <input className="Recipe_info_txtbox2" type="text" />
-      <br></br>
-      
-      <button class="show_recipe_index_btn"><a href="/Recipe">Edit Recipe</a></button>
-      <button class="show_recipe_index_btn2"><input type="submit" value="Edit Recipe"/></button>
-      <button class="show_recipe_index_btn_1"><a href="/Recipe">Delete Recipe</a></button>
-      <button class="show_recipe_index_btn2_1"><input type="submit" value="Delete Recipe"/></button>
-</div>
-      )
-    }
-    
-    export default Show
+  ////////////////////
+  // Styles
+  ///////////////////
+  const div = {
+    textAlign: "center",
+    border: "3px solid green",
+    width: "80%",
+    margin: "30px auto",
+  };
+
+  return (
+    <div style={div}>
+      <h1>{post.subject}</h1>
+      <h2>{post.details}</h2>
+      <div style={{ textAlign: "center" }}>
+        <h2>Create a Weapons</h2>
+        <Form action={`/update/${post.id}`} method="post">
+          <input
+            type="text"
+            name="subject"
+            placeholder="write subject here"
+            defaultValue={post.subject}
+          />
+          <input
+            type="text"
+            name="details"
+            placeholder="write details here"
+            defaultValue={post.details}
+          />
+          <button>Update Weapons</button>
+        </Form>
+        <Form action={`/delete/${post.id}`} method="post">
+          <button>Delete Weapons</button>
+        </Form>
+      </div>
+      <Link to="/">
+        <button>Go Back</button>
+      </Link>
+    </div>
+  );
+};
+
+export default Show;
